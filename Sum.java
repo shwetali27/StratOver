@@ -4,7 +4,8 @@ import com.bridgelabz.util.Utility;
 
 class Sum{
 	public static void main(String[] args){
-		hedwfil e;rok
+		Utility u = new Utility();
+		System.out.println("");
 
 	}
 }

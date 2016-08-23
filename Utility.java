@@ -40,6 +40,19 @@ public class Utility{
 		}
 		return 0.0;
 	}
+
+
+	//input boolean
+	public boolean inputBoolean(){
+		try{
+			return Boolean.parseBoolean(br.readLine());
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		return false;
+	}
+
 	//coin flipping
 	public void randFlip(double n){
 		double h=0,t=0,d;
