@@ -2,7 +2,7 @@
 package com.bridgelabz.programs;
 import com.bridgelabz.util.Utility;
 
-public class Harmonic{
+class Harmonic{
 	public static void main(String[] args){
 		int n,i;
 		double value = 0;

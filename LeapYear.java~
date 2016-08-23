@@ -2,7 +2,7 @@
 
 package com.bridgelabz.programs;
 import com.bridgelabz.util.Utility;
-public class LeapYear{
+class LeapYear{
 	public static void main(String[] args){
 		int y;
 		Utility u = new Utility();

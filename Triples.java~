@@ -2,7 +2,7 @@
 package com.bridgelabz.programs;
 import com.bridgelabz.util.Utility;
 
-public class Sum{
+class Triples{
 	public static void main(String[] args){
 		Utility u = new Utility();
 		System.out.println("Please Enter the no. of Elements");
@@ -25,6 +25,7 @@ public class Sum{
 				}
 			}
 		}
-
+		
+		System.out.println("Total number of Tripels in given list is: "+count);
 	}
 }

@@ -3,7 +3,7 @@
 package com.bridgelabz.programs;
 import com.bridgelabz.util.Utility;
 
-public class ArrayPrint{
+class ArrayPrint{
 	public static void main(String[] args){
 		int m,n,c;
 		

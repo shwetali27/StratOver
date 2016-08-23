@@ -1,6 +1,6 @@
 //4. Program to print table power of 2
 package com.bridgelabz.programs;
-public class Power{
+class Power{
 	public static void main(String[] args){
 		int n;
 		n = Integer.parseInt(args[0]);
