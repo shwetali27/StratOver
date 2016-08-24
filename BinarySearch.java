@@ -4,7 +4,7 @@ import com.bridgelabz.util.Utility;
 
 public class BinarySearch{
 	public static void main(String[] args){
-		int n,c=0; 
+		int n,start,end,mid,c = 0; 
 		Utility u = new Utility();
 		System.out.println("Please Enter Strings");
 		String names = u.inputString();
@@ -16,14 +16,38 @@ public class BinarySearch{
 		System.out.println("Please Enter the string to be find :");
 		str2 = u.inputString();
 
-		for(int i=0;i<n;i++){
-			if(str1[i].equals(str2))
-				c++;
+		//Sorting the string
+		for(int i=1;i<n;i++){
+			for(int j=i;j>0;j--){
+				if(str1[j-1].compareTo(str1[j])>0){
+					String temp = str1[j];
+					str1[j] = str1[j-1];
+					str1[j-1] = temp;
+				}
+			}
 		}
-		if(c>0) 
-			System.out.println("Search Found");
-		else
-			System.out.println("Search not found");
 
+		System.out.print("Sorted Strings are: ");
+		for(String i:str1){
+			System.out.print(i+" ");
+		}
+		start = 0;
+		end  = n-1;
+
+		while(start <= end){
+			mid = (start+end)/2;
+			if (str2.compareTo(str1[mid])==0){
+				System.out.println("\nSearch found at position :"+mid);
+				c++;
+				break;
+			}
+			if(str2.compareTo(str1[mid])<0)
+				end = mid-1;
+			else
+				start = mid+1;		
+		}
+		if(c == 0)
+			System.out.println("\nSearch not found");		
+		
 	}
 }
