@@ -25,10 +25,8 @@ public class InsertionSort{
 		}
 
 		System.out.println("Sorted Strings are :");
-		//using for each loop
-		for(String i:str){
-			System.out.println(i);
-		}
+		u.printArray(str);
+		System.out.println();
 
 	}
 }

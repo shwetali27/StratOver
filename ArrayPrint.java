@@ -3,7 +3,7 @@
 package com.bridgelabz.programs;
 import com.bridgelabz.util.Utility;
 
-public class ArrayPrint{
+public class ArrayPrint <T>{
 	public static void main(String[] args){
 		int m,n,c;
 		
@@ -19,7 +19,7 @@ public class ArrayPrint{
 					m = u.inputInteger();
 				System.out.println("Please Enter no. Columns :");
 					n = u.inputInteger();
-					int a[][] = new int[m][n];
+					Integer a[][] = new Integer[m][n];
 
 					//taking array input from user
 					for(int i=0;i<m;i++){
@@ -31,12 +31,7 @@ public class ArrayPrint{
 		
 				//Array Printing
 				System.out.println("Array is");
-				for(int i=0;i<m;i++){
-					for(int j=0;j<n;j++){
-						System.out.print(a[i][j]+" ");
-					}
-					System.out.println();
-				}
+				u.printArray(a,m,n);
 				break;
 			}
 
@@ -45,7 +40,7 @@ public class ArrayPrint{
 					m = u.inputInteger();
 				System.out.println("Please Enter no. Columns :");
 					n = u.inputInteger();
-					double a[][] = new double[m][n];
+					Double a[][] = new Double[m][n];
 
 					//taking array input from user
 					for(int i=0;i<m;i++){
@@ -57,12 +52,7 @@ public class ArrayPrint{
 		
 				//Array Printing
 				System.out.println("Array is");
-				for(int i=0;i<m;i++){
-					for(int j=0;j<n;j++){
-						System.out.print(a[i][j]+" ");
-					}
-					System.out.println();
-				}
+				u.printArray(a,m,n);
 				break;
 			}
 
@@ -83,12 +73,7 @@ public class ArrayPrint{
 		
 				//Array Printing
 				System.out.println("Array is");
-				for(int i=0;i<m;i++){
-					for(int j=0;j<n;j++){
-						System.out.print(a[i][j]+" ");
-					}
-					System.out.println();
-				}
+				u.printArray(a,m,n);
 				break;
 			}
 	

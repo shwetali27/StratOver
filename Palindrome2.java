@@ -32,13 +32,3 @@ class Palindrome2{
 }
 
 
-
-
-
-/*
-if we didn't specify the type while using the collections we will get the warning saying: perticular java file uses unchecked or unsafe operations.
-so while creating the object of Queue or Stack we Should add <String> type
-Queue<String> = new LinkedList<String>();
-and inside for while adding the element it should be of String type.
-
-*/

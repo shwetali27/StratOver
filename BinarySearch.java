@@ -28,9 +28,8 @@ public class BinarySearch{
 		}
 
 		System.out.print("Sorted Strings are: ");
-		for(String i:str1){
-			System.out.print(i+" ");
-		}
+		u.printArray(str1); //Generic type array printing
+		
 		start = 0;
 		end  = n-1;
 

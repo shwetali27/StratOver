@@ -8,7 +8,7 @@ public class BubbleSort{
 		System.out.println("Please Enter total numbers to be sorted");
 		int n = u.inputInteger();
 
-		int a[] = new int[n];
+		Integer a[] = new Integer[n];
 		for(int i=0;i<n;i++){
 			System.out.print("Please enter "+(i+1)+" Element:");
 			a[i] = u.inputInteger();
@@ -25,11 +25,7 @@ public class BubbleSort{
 		}
 
 		System.out.print("Sorted array is :");
-		//ForEach loop for printing array Elements
-		for(int i:a){
-			System.out.print(i+" ");
-		}
-		
+		u.printArray(a);
 		System.out.println();
 
 	}

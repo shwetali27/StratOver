@@ -1,9 +1,11 @@
 package com.bridgelabz.util;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.File;
+import java.io.FileReader;
 
 public class Utility<T>{
-	BufferedReader br;
+	BufferedReader br,rf = null;
 	public Utility(){
 		br = new BufferedReader(new InputStreamReader(System.in));
 	}
@@ -37,7 +39,7 @@ public class Utility<T>{
 		}
 		catch(Exception e){
 			System.out.println(e);
-		}
+		}new BufferedReader(new InputStreamReader(System.in));
 		return 0.0;
 	}
 
@@ -70,12 +72,35 @@ public class Utility<T>{
 			
 	}
 
-	//Array Printing Generic type
+	//Array Printing(one dimentional) Generic type
 	public <T> void printArray(T[] inputArray){
-		for(T i = inputArray)
+		for(T i:inputArray)
 			System.out.print(i+" ");
-
 	}
+
+	//Array printing(two dimentional) Generic type
+	public <T> void printArray(T[][] inputArray,int m,int n){
+		for(int i=0;i<m;i++){
+			for(int j=0;j<n;j++){
+				System.out.print(inputArray[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+
+	//reading file
+	public String readFile(File f){
+		
+		try{
+			rf = new BufferedReader(new FileReader(f));
+			return rf.readLine();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		return "";
+	}
+
 }
 
 
