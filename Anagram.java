@@ -20,6 +20,8 @@ public class Anagram{
 		n2 = s2.length;
 		//Checking for Anagram
 		if(n1!=n2) System.out.println("Entered Strings are not Anagram");
+
+		//sorting the array
 		else{
 			for(int i=1;i<n1;i++){
 				for(int j=0;j<n1-i;j++){
@@ -40,7 +42,7 @@ public class Anagram{
 					}
 				}
 			}
-
+			//checking each element of an array
 			for(int i=0;i<n1;i++){
 				if(s1[i] == s2[i]) count++;
 			}
