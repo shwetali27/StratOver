@@ -14,7 +14,7 @@ public class OrderedList<T>{
 		System.out.println("Content of file are: "+s);
 		s = s.trim();
 		String str[] = s.split(" ");
-
+		u.printArray(str);
 		for(int i=0;i<str.length;i++){
 			n.addNode(Integer.parseInt(str[i]));
 		}
