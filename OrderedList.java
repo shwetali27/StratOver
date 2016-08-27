@@ -19,6 +19,6 @@ public class OrderedList<T>{
 			n.addNode(Integer.parseInt(str[i]));
 		}
 		
-		n.showList();
+		//n.showList();
 	}
 }

@@ -4,13 +4,13 @@ import com.bridgelabz.util.Utility;
 import com.bridgelabz.programs.NodeCreation;
 
 public class NodeFunction{
-	NodeCreation head=null,tail,temp,n;
-	int m = 1;	
-	
+	NodeCreation head=null,tail,temp,n,x,prev;
+	int i = 0;
 	public void addNode(int value){
 		n = new NodeCreation();
 		n.setData(value);
-	
+		i++;
+	System.out.println(i);
 		if(head == null){
 			head = n;
 			temp = n;
@@ -29,31 +29,26 @@ public class NodeFunction{
 				tail = n;
 				
 			}
-				
-			temp=null;
-			temp=head;
-
-			m++;
-			for(int i=0;i<m;i++){
-				
-				if(value >= temp.getData() && value <= temp.getNext().getData()){
+			
+			temp = head;
+			//while(temp.getNext() != n){
+			for(int k=1;k<i-2;k++){				
+				if(value > temp.getData() && value < temp.getNext().getData()){
 					n.setNext(temp.getNext());
 					temp.setNext(n);
-					i++;
 					break;
 				}
-				
-				else
+				else				
 					temp.setNext(temp.getNext().getNext());
 				System.out.println("Checking");
-				System.out.println((temp.next).data);
+				//System.out.println((temp.next).data);
 			}
 			
 		}
 		
 	}
 
-	public void showList(){
+	/*public void showList(){
 		NodeCreation temp = head;
 		n = new NodeCreation();
 			if(n == null)
@@ -65,8 +60,7 @@ public class NodeFunction{
 				}
 	
 			}
-		}
+		}*/
 		
-
 }
 
