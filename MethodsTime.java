@@ -1,4 +1,10 @@
-//23. inside Utility class finding the elapsed time for method call
+/*
+*@file_Name: MethodsTime.java
+*@Author: Shwetali
+*@Date: 28-08-2016
+*@purpose:  Demo Program for finding the elapsed time for method call
+*/
+
 package com.bridgelabz.programs;
 import com.bridgelabz.util.Utility;
 

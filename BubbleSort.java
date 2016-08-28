@@ -1,4 +1,10 @@
-//17. Bubble sorting
+/*
+*@file_Name: BubbleSort.java
+*@Author: Shwetali
+*@Date: 28-08-2016
+*@purpose: Bubble sorting
+*/
+
 package com.bridgelabz.programs;
 import com.bridgelabz.util.Utility;
 
@@ -6,26 +12,26 @@ public class BubbleSort{
 	public static void main(String[] args){
 		Utility u = new Utility();
 		System.out.println("Please Enter total numbers to be sorted");
-		int n = u.inputInteger();
+		int size = u.inputInteger();
 
-		Integer a[] = new Integer[n];
-		for(int i=0;i<n;i++){
+		Integer array[] = new Integer[size];
+		for(int i=0;i<size;i++){
 			System.out.print("Please enter "+(i+1)+" Element:");
-			a[i] = u.inputInteger();
+			array[i] = u.inputInteger();
 		}
 
-		for(int i=1;i<n;i++){
-			for(int j=0;j<n-i;j++){
-				if(a[j]>a[j+1]){
-					int temp = a[j];
-					a[j] = a[j+1];
-					a[j+1] = temp;
+		for(int i=1;i<size;i++){
+			for(int j=0;j<size-i;j++){
+				if(array[j]>array[j+1]){
+					int temp = array[j];
+					array[j] = array[j+1];
+					array[j+1] = temp;
 				}
 			}
 		}
 
 		System.out.print("Sorted array is :");
-		u.printArray(a);
+		u.printArray(array);
 		System.out.println();
 
 	}

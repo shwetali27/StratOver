@@ -1,52 +1,57 @@
-//11.An Anagram Detection Example
+/*
+*@file_Name: Anagram.java
+*@Author: Shwetali
+*@Date: 28-08-2016
+*@purpose: Program to detect wheather the Strings are Anagram or not
+*/
+
 package com.bridgelabz.programs;
 import com.bridgelabz.util.Utility;
 
-
-//demo 
 public class Anagram{
 	public static void main(String[] args){
 		Utility u = new Utility();
-		String str1,str2;
+		String first,second;
 		System.out.println("Please Enter First String");
-		str1 = u.inputString();
+		first = u.inputString();
 		System.out.println("Please Enter Second String");
-		str2 = u.inputString();
-		char s1[] = str1.toLowerCase().toCharArray();
-		char s2[] = str2.toLowerCase().toCharArray();;
+		second = u.inputString();
+		char char1[] = first.toLowerCase().toCharArray();
+		char char2[] = second.toLowerCase().toCharArray();;
 		int count =0;
-		int n1,n2;
-		n1 = s1.length;
-		n2 = s2.length;
+		int size1,size2;
+		size1 = char1.length;
+		size2 = char2.length;
 		//Checking for Anagram
-		if(n1!=n2) System.out.println("Entered Strings are not Anagram");
+		if(size1!=size2) System.out.println("Entered Strings are not Anagram");
 
 		//sorting the array bubble sort
 		else{
-			for(int i=1;i<n1;i++){
-				for(int j=0;j<n1-i;j++){
-					if(s1[j] > s1[j+1]){
-						char temp1 = s1[j];
-						s1[j] = s1[j+1];
-						s1[j+1] = temp1;
+			for(int i=1;i<size1;i++){
+				for(int j=0;j<size1-i;j++){
+					if(char1[j] > char1[j+1]){
+						char temp1 =char1[j];
+						char1[j] = char1[j+1];
+						char1[j+1] = temp1;
 					}
 				}
 			}
 
-			for(int i=1;i<n2;i++){
-				for(int j=0;j<n2-i;j++){
-					if(s2[j] > s2[j+1]){
-						char temp2 = s2[j];
-						s2[j] = s2[j+1];
-						s2[j+1] = temp2;
+			for(int i=1;i<size2;i++){
+				for(int j=0;j<size2-i;j++){
+					if(char2[j] > char2[j+1]){
+						char temp2 = char2[j];
+						char2[j] = char2[j+1];
+						char2[j+1] = temp2;
 					}
 				}
 			}
 			//checking each element of an array
-			for(int i=0;i<n1;i++){
-				if(s1[i] == s2[i]) count++;
+			for(int i=0;i<size1;i++){
+				if(char1[i] == char2[i])
+					count++;
 			}
-			if(count == n1)
+			if(count == size1)
 				System.out.println("Entered Strings are Anagram");
 			else
 				System.out.println("Entered Strings are Not Anagram");

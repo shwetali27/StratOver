@@ -1,37 +1,46 @@
-//7. Gambler program
+/*
+*@file_Name: Gambler.java
+*@Author: Shwetali
+*@Date: 28-08-2016
+*@purpose: Gambler program
+*/
+
 package com.bridgelabz.programs;
 import com.bridgelabz.util.Utility;
 
 public class Gambler{
 	public static void main(String[] args){
-		int $stake,$goal = 100,n,w=0,l=0;
+		int $stake,$goal = 100,trials,win=0,lose=0;
 		Utility u = new Utility();
 		System.out.println("Please Enter Stake");
 		$stake = u.inputInteger();
 		System.out.println("Please Enter number of trials");
-		n = u.inputInteger();
-		int c = $stake;
-		int m = n;
-		while(c>0 && c<$goal && n>0){
-				double d = Math.random(); //to get randome value between 0 to 1;
-				if(d<0.5){
-					c++;
-					w++;
+		trials = u.inputInteger();
+		int points = $stake;
+		int m = trials;
+		
+		while(points>0 && points<$goal && trials>0){
+				double rand = Math.random(); //to get randome value between 0 to 1;
+				if(rand<0.5){
+					points++;
+					win++;
 				}
 				else{
-					c--;
-					l++;
+					points--;
+					lose++;
 				}
-				n--;
+				trials--;
 			}
-	
-		System.out.println("percentage of winning bet :"+100*w/m+"%");
-		System.out.println("percentage of Losing bet :"+100*l/m+"%");
-		if(c == $goal){
-			System.out.println("player Won, Stake = "+c);
+		
+		//finding the percentage of winning and losing
+		System.out.println("percentage of winning bet :"+100*win/m+"%");
+		System.out.println("percentage of Losing bet :"+100*lose/m+"%");
+		//printing result
+		if(points == $goal){
+			System.out.println("player Won, Stake = "+points);
 		}
 		else{
-			System.out.println("Player Lose, Stake = "+c);
+			System.out.println("Player Lose, Stake = "+points);
 		}
 	}
 }

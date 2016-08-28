@@ -10,10 +10,10 @@ import com.bridgelabz.util.Utility;
 
 public class CoinFlip{
 	public static void main(String[] args){
-		double num,haid=0,tail=0;
+		int num;
 		Utility u = new Utility();
 		System.out.println("Please Enter the number of times you want to flip the coin");
-		num = u.inputDouble();
+		num = u.inputInteger();
 		u.randFlip(num);
 	}
 }

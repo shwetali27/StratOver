@@ -1,79 +1,84 @@
-//9. Program for 2-D array
+/*
+*@file_Name: ArrayPrint.java
+*@Author: Shwetali
+*@Date: 28-08-2016
+*@purpose: Program for creating and printing 2-D array
+*/
 
 package com.bridgelabz.programs;
 import com.bridgelabz.util.Utility;
 
-public class ArrayPrint <T>{
+public class ArrayPrint{
 	public static void main(String[] args){
-		int m,n,c;
+		int row,column,choice;
 		
 		Utility u = new Utility();
 
 		System.out.println("Please choose which type of array you want to create :");
 		System.out.println(" 1.Integer \n 2.Double \n 3.Boolean");
-		c = u.inputInteger();
-		
-		switch(c){
+		choice = u.inputInteger();
+		//Using switch case for perticular choice
+		switch(choice){
 			case 1:{
 				System.out.println("Please Enter no. of Rows :");
-					m = u.inputInteger();
+					row = u.inputInteger();
 				System.out.println("Please Enter no. Columns :");
-					n = u.inputInteger();
-					Integer a[][] = new Integer[m][n];
+					column = u.inputInteger();
+					Integer array[][] = new Integer[row][column];
 
 					//taking array input from user
-					for(int i=0;i<m;i++){
-						for(int j=0;j<n;j++){
+					for(int i=0;i<row;i++){
+						for(int j=0;j<column;j++){
 						System.out.print("Please enter Element at position ("+i+","+j+"): ");
-						a[i][j] = u.inputInteger();
+						array[i][j] = u.inputInteger();
 					}
 				}
 		
-				//Array Printing
+				//Array Printing function from Utility class
 				System.out.println("Array is");
-				u.printArray(a,m,n);
+				u.printArray(array,row,column);
 				break;
 			}
 
 			case 2:{
 				System.out.println("Please Enter no. of Rows :");
-					m = u.inputInteger();
+					row = u.inputInteger();
 				System.out.println("Please Enter no. Columns :");
-					n = u.inputInteger();
-					Double a[][] = new Double[m][n];
+					column = u.inputInteger();
+					Double array[][] = new Double[row][column];
 
 					//taking array input from user
-					for(int i=0;i<m;i++){
-						for(int j=0;j<n;j++){
+					for(int i=0;i<row;i++){
+						for(int j=0;j<column;j++){
 						System.out.print("Please enter Element at position ("+i+","+j+"): ");
-						a[i][j] = u.inputDouble();
+						array[i][j] = u.inputDouble();
 					}
 				}
 		
-				//Array Printing
+				///Array Printing function from Utility class
 				System.out.println("Array is");
-				u.printArray(a,m,n);
+				u.printArray(array,row,column);
 				break;
 			}
 
 			case 3:{
 				System.out.println("Please Enter no. of Rows :");
-					m = u.inputInteger();
+					row = u.inputInteger();
 				System.out.println("Please Enter no. Columns :");
-					n = u.inputInteger();
-					Boolean a[][] = new Boolean[m][n];
+					column = u.inputInteger();
+					Boolean array[][] = new Boolean[row][column];
 
 					//taking array input from user
-					for(int i=0;i<m;i++){
-						for(int j=0;j<n;j++){
+					for(int i=0;i<row;i++){
+						for(int j=0;j<column;j++){
 						System.out.print("Please enter Element at position ("+i+","+j+"): ");
-						a[i][j] = u.inputBoolean();
+						array[i][j] = u.inputBoolean();
 					}
 				}
 		
-				//Array Printing
+				//Array Printing function from Utility class
 				System.out.println("Array is");
-				u.printArray(a,m,n);
+				u.printArray(array,row,column);
 				break;
 			}
 	

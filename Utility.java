@@ -1,8 +1,8 @@
 /*
-file name: Utility.java
-Created By: Shwetali
-Date: 27-08-2016
-purpose: for data input and common code
+*@file name: Utility.java
+*@Created By: Shwetali
+*@Date: 27-08-2016
+*@purpose: Utility class for data input and common code.
 */
 package com.bridgelabz.util;
 import java.io.BufferedReader;
@@ -12,7 +12,7 @@ import java.io.FileReader;
 
 public class Utility<T>{
 	BufferedReader br,rf = null;
-	long StartTime = 0,StopTime = 0, Elapsed = 0;
+
 	//Utility constructor for creating object for BufferedReader
 	public Utility(){
 		br = new BufferedReader(new InputStreamReader(System.in));
@@ -64,26 +64,26 @@ public class Utility<T>{
 	}
 
 	//coin flipping
-	public void randFlip(double n){
-		double h=0,t=0,d;
-		for(int i=1; i<=n; i++){
-			d = Math.random(); //to get randome value between 0 to 1;
-			if(d<0.5){
-					t++;	
+	public void randFlip(int num){
+		double head=0,tail=0,random;
+		for(int i=1; i<=num; i++){
+			random = Math.random(); //to get randome value between 0 to 1;
+			if(random<0.5){
+					tail++;	
 			}
 			else{
-					h++;
+					head++;
 			}
 		}
-		System.out.println("Percentage of heads ="+(h/n)*100+"%");
-		System.out.println("Percentage of tails ="+(t/n)*100+"%");
+		System.out.println("Percentage of heads ="+(head/num)*100+"%");
+		System.out.println("Percentage of tails ="+(tail/num)*100+"%");
 			
 	}
 
 	//taking integer array input
-	public Integer[] inputIntArray(int n){
-		Integer array[] = new Integer[n];
-		for(int i=0;i<n;i++){
+	public Integer[] inputIntArray(int size){
+		Integer array[] = new Integer[size];
+		for(int i=0;i<size;i++){
 			System.out.print("Please enter Element at "+(i+1)+" position: ");
 			array[i] = this.inputInteger();
 		}
@@ -91,9 +91,9 @@ public class Utility<T>{
 	}
 
 	//taking String array input
-	public String[] inputStringArray(int n){
-		String array[] = new String[n];
-		for(int i=0;i<n;i++){
+	public String[] inputStringArray(int size){
+		String array[] = new String[size];
+		for(int i=0;i<size;i++){
 			System.out.print("Please enter String at "+(i+1)+" position: ");
 			array[i] = this.inputString();
 		}
@@ -109,9 +109,9 @@ public class Utility<T>{
 	}
 
 	//Array printing(two dimentional) Generic type
-	public <T> void printArray(T[][] inputArray,int m,int n){
-		for(int i=0;i<m;i++){
-			for(int j=0;j<n;j++){
+	public <T> void printArray(T[][] inputArray,int row,int column){
+		for(int i=0;i<row;i++){
+			for(int j=0;j<column;j++){
 				System.out.print(inputArray[i][j]+" ");
 			}
 			System.out.println();
@@ -188,43 +188,43 @@ public class Utility<T>{
 	}
 
 	//binary search for integer
-	public void binarySearchInt(Integer[] array,int a){
-		int n = array.length;
+	public void binarySearchInt(Integer[] array,int num){
+		int size = array.length;
 		array = this.bubbleSortInt(array);
-		int start,end,mid,c=0;
+		int start,end,mid,count=0;
 		
 		start = 0;
-		end  = n-1;
+		end  = size-1;
 
 		while(start <= end){
 			mid = (start+end)/2;
-			if (a==array[mid]){
+			if (num==array[mid]){
 				System.out.println("\nSearch found at position :"+mid);
-				c++;
+				count++;
 				break;
 			}
-			if(a<array[mid])
+			if(num<array[mid])
 				end = mid-1;
 			else
 				start = mid+1;		
 		}
-		if(c == 0)
+		if(count == 0)
 			System.out.println("\nSearch not found");	
 
 	}
 
 	//binary search for String
 	public void binarySearchString(String[] array, String str){
-		int n = array.length;
-		int start,end,mid,c=0;
+		int size = array.length;
+		int start,end,mid,count=0;
 		start = 0;
-		end  = n-1;
+		end  = size-1;
 
 		while(start <= end){
 			mid = (start+end)/2;
 			if (str.compareTo(array[mid])==0){
 				System.out.println("\nSearch found at position :"+mid);
-				c++;
+				count++;
 				break;
 			}
 			if(str.compareTo(array[mid])<0)
@@ -232,7 +232,7 @@ public class Utility<T>{
 			else
 				start = mid+1;		
 		}
-		if(c == 0)
+		if(count == 0)
 			System.out.println("\nSearch not found");	
 
 	}	
