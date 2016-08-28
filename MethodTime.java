@@ -8,7 +8,7 @@
 package com.bridgelabz.programs;
 import com.bridgelabz.util.Utility;
 
-class MethodTime{
+public class MethodTime{
 
 		Utility u = new Utility();
 		long start,stop,Elapsed;
@@ -90,25 +90,40 @@ class MethodTime{
 		System.out.println("Please Enter Size of an integer array");
 		int intSize = u.inputInteger();
 		Integer array[] = new Integer[intSize];
+		Integer array2[] = new Integer[intSize];
 		array = u.inputIntArray(intSize);
-		//u.printArray(array);
-
+		
+		for(int i=0;i<intSize;i++){
+			array2[i] = array[i];	
+		}
+	
 		System.out.println("Please Enter size of String array");
 		int stringSize = u.inputInteger();
 		String str[] = new String[stringSize];
+		String str2[] = new String[stringSize];
 		str = u.inputStringArray(stringSize);
 
-		mt.method1(array);
-		mt.method2(str);
-		mt.method3(array);
-		mt.method4(str);
-		mt.method5(array);
-		mt.method6(str);
-			
-					
+		for(int i=0;i<stringSize;i++){
+			str2[i] = str[i];	
+		}
+		mt.method1(array2);
+		mt.method2(str2);
+		for(int i=0;i<intSize;i++){
+			array2[i] = array[i];	
+		}
+		for(int i=0;i<stringSize;i++){
+			str2[i] = str2[i];	
+		}
+		mt.method3(array2);
+		mt.method4(str2);
+		for(int i=0;i<intSize;i++){
+			array2[i] = array[i];	
+		}
+		for(int i=0;i<stringSize;i++){
+			str2[i] = str[i];	
+		}
+		mt.method5(array2);
+		mt.method6(str2);
 	}
-
 }
-
-
 
