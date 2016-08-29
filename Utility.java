@@ -199,7 +199,7 @@ public class Utility<T>{
 		while(start <= end){
 			mid = (start+end)/2;
 			if (num==array[mid]){
-				System.out.println("\nSearch found at position :"+mid);
+				System.out.println("Search found at position :"+mid);
 				count++;
 				break;
 			}
@@ -209,21 +209,22 @@ public class Utility<T>{
 				start = mid+1;		
 		}
 		if(count == 0)
-			System.out.println("\nSearch not found");	
+			System.out.println("Search not found");	
 
 	}
 
 	//binary search for String
 	public void binarySearchString(String[] array, String str){
 		int size = array.length;
+		array = this.bubbleSortString(array);
 		int start,end,mid,count=0;
 		start = 0;
 		end  = size-1;
-
+		
 		while(start <= end){
 			mid = (start+end)/2;
 			if (str.compareTo(array[mid])==0){
-				System.out.println("\nSearch found at position :"+mid);
+				System.out.println("Search found at position :"+mid);
 				count++;
 				break;
 			}
@@ -233,7 +234,7 @@ public class Utility<T>{
 				start = mid+1;		
 		}
 		if(count == 0)
-			System.out.println("\nSearch not found");	
+			System.out.println("Search not found");	
 
 	}	
 }
