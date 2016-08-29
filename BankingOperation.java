@@ -30,12 +30,9 @@ public class BankingOperation{
 	}
 	//for removing node from queue
 	public void remove(){
-		
-			QueueNode node = front;
-			front = node.getNode();
+			front = rear;
 			if(front == null)
-				rear = null;
-		
+				System.out.println("Queue is Empty");
 	}
 	//depositing money
 	public void deposit(int choice){
