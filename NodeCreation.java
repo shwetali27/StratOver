@@ -14,7 +14,6 @@ public class NodeCreation{
 	//Assigning the data value
 	public void setData(int value){
 		data = value;
-		System.out.println("inside node creation " +data);
 	}
 	//getting data value
 	public int getData(){
