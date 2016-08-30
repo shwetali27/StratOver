@@ -6,9 +6,11 @@
 */
 package com.bridgelabz.util;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 
 public class Utility<T>{
 	BufferedReader br,rf = null;
@@ -129,6 +131,19 @@ public class Utility<T>{
 			System.out.println(e);
 		}
 		return "";
+	}
+
+	//Writing into file
+	public void writeFile(File f,int data){
+		try{
+			String s = this.readFile(f);
+			BufferedWriter wr = new BufferedWriter(new FileWriter(f));
+			wr.write(s+" "+data);
+			wr.close();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
 	}
 
 	//bubble sort for Integer
