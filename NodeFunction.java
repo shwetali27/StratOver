@@ -54,13 +54,16 @@ public class NodeFunction{
 	//method for displaying node
 	public void showList(){
 		temp = head;
+		int total = 0;
 		if(temp == null)
 			System.out.println("List is Empty");
 		else{
 			while(temp != null){
+				total++;
 				System.out.print(temp.getData()+" ");
 				temp = temp.getNext();
 			}
+			System.out.println("\nTotal numbers in list: "+total);
 		}
 	}//end of showList method
 		
