@@ -121,10 +121,10 @@ public class Utility<T>{
 	}
 
 	//reading file
-	public String readFile(File f){
+	public String readFile(File file){
 		
 		try{
-			rf = new BufferedReader(new FileReader(f));
+			rf = new BufferedReader(new FileReader(file));
 			return rf.readLine();
 		}
 		catch(Exception e){
@@ -133,12 +133,39 @@ public class Utility<T>{
 		return "";
 	}
 
-	//Writing into file
-	public void writeFile(File f,int data){
+	//Writing into file int Data
+	public void writeFile(File file,int data){
+		try{
+			String str = this.readFile(file);
+			str = str.trim();
+			BufferedWriter wr = new BufferedWriter(new FileWriter(file));
+			wr.write(str+data+" ");
+			wr.close();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+	//writing into file String data
+	public void writeFile(File file,String data){
+		try{
+			String string = this.readFile(file);
+			string = string.trim();
+			BufferedWriter wr = new BufferedWriter(new FileWriter(file));
+			wr.write(string+" "+data);
+			wr.close();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+
+	//Clear the Data inside the file
+	public void clearFile(File f){
 		try{
 			String s = this.readFile(f);
 			BufferedWriter wr = new BufferedWriter(new FileWriter(f));
-			wr.write(s+" "+data);
+			wr.write(" ");
 			wr.close();
 		}
 		catch(Exception e){

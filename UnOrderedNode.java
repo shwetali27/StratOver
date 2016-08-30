@@ -1,0 +1,94 @@
+/*
+*@file_Name: UnOrderedNode.java
+*@Author: Shwetali
+*@Date: 30-08-2016
+*@purpose:  UnOrdered list program creating node String array of LinkedList and sorting.
+*/
+
+package com.bridgelabz.programs;
+import com.bridgelabz.util.Utility;
+import com.bridgelabz.programs.UnOrderedNodeCreation;
+import java.io.File;
+
+class UnOrderedNode<T>{
+	UnOrderedNodeCreation head,tail,node,temp,temp2;
+	Utility u = new Utility();
+	File file = new File("UnOrderedStrings.txt");	
+	public void addNode(T value){
+		node = new UnOrderedNodeCreation();
+		node.setData(value);
+		if(head == null){
+			head = node;
+			tail = node;
+		}
+		else{
+			tail.setNext(node);
+			tail = node;
+		}	
+	}//end of add method
+
+	
+	public void fileUpdate(){
+		temp = head;
+		u.clearFile(file);
+		int total = 0;
+		if(temp == null)
+			System.out.println("List is Empty");
+		else{
+			while(temp != null){
+				total++;
+				String str = (String)temp.getData();
+				u.writeFile(file,str);
+				temp = temp.getNext();
+			}
+		}
+	}//end of fileUpdate
+
+	public void search(T value){
+		int count = 0;
+		temp = head;
+		while(temp != null){
+			if(value.equals(temp.getData())){
+				count++;
+				System.out.println("Search found, Element is removed");
+				this.remove(value);
+				System.out.print("New list is: ");
+				this.fileUpdate();
+				System.out.println(u.readFile(file));
+				System.out.println();
+			}
+			else
+				temp = temp.getNext();
+		}
+		if(count == 0){
+			System.out.println("Search not found, Element is added");
+			this.addNode(value);
+			System.out.print("New list is: ");
+			this.fileUpdate();
+			System.out.println(u.readFile(file));
+			System.out.println();
+		}
+	}//end of search
+
+	//removing the element from list
+	public void remove(T value){
+		temp = head;
+		temp2 = temp.getNext();
+		node = new UnOrderedNodeCreation();
+		node.setData(value);
+		if(value.equals(head.getData()))
+			head = head.getNext();
+		else{
+			while(temp2 != null){
+				if(value.equals(temp2.getData())){
+					temp.setNext(temp2.getNext());
+					break;			
+				}
+				else{
+					temp = temp2;
+					temp2 = temp2.getNext();
+				}
+			}
+		}
+	}//end of remove method
+}
