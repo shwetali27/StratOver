@@ -1,19 +1,19 @@
 {
   "data":[
       {"rice":[
-       {"name":"Basmati","weigth":"10","price":"30"},
-       {"name":"Champaa","weigth":"5","price":"25"},
-       {"name":"Clearfield","weigth":"7","price":"27"}
+       {"name":"Basmati","weight":"10","price":"30"},
+       {"name":"Champaa","weight":"5","price":"25"},
+       {"name":"Clearfield","weight":"7","price":"27"}
         ]},
       {"pulses":[
-        {"name":"Chana","weigth":"2","price":"70"},
-        {"name":"Chawli","weigth":"1","price":"45"},
-        {"name":"Masoor","weigth":"3","price":"80"}
+        {"name":"Chana","weight":"2","price":"70"},
+        {"name":"Chawli","weight":"1","price":"45"},
+        {"name":"Masoor","weight":"3","price":"80"}
       ]},
        {"weats":[
-       {"name":"durum","weigth":"4","price":"35"},
-       {"name":"Emmer","weigth":"7","price":"30"},
-       {"name":"Khorasan","weigth":"6","price":"23"}
+       {"name":"durum","weight":"4","price":"35"},
+       {"name":"Emmer","weight":"7","price":"30"},
+       {"name":"Khorasan","weight":"6","price":"23"}
         ]}
   ]
 }
