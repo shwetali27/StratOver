@@ -5,6 +5,7 @@
 *@purpose: Program to read JSON file and print data inside file.
 */
 
+package com.bridgelabz.json;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -35,8 +36,8 @@ public class JSON_InventoryDataManagement {
 			 for (int y = 0; y < item.length(); y++) {
 			        JSONObject itemData = item.getJSONObject(y);
 			        System.out.println("name: "+itemData.get("name"));
-			        System.out.println("Weight: "+itemData.get("weight"));
-			        System.out.println("price: "+itemData.get("price"));
+			        System.out.println("Weight: "+itemData.get("weight")+" Kg");
+			        System.out.println("price: "+itemData.get("price")+" /Kg");
 			        System.out.println();
 			    }
 			 System.out.println("*********************");
