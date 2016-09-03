@@ -20,12 +20,12 @@ public class JSON_ProgUsingParsing {
 			JSONObject object = (JSONObject) obj;
 			 JSONArray data = (JSONArray) object.get("data");
 			 String[] str = {"rice","pulses","weats"};
-			 for(int i=0;i<3;i++){
+			 for(int i=0;i<data.size();i++){
 				 JSONObject itemObj = (JSONObject) data.get(i);
 				 
 				 JSONArray item = (JSONArray) itemObj.get(str[i]);
 				 System.out.println(str[i]+" Data:");
-				 for (int y = 0; y < 3; y++) {
+				 for (int y = 0; y < item.size(); y++) {
 				        JSONObject itemData = (JSONObject) item.get(y);
 				        System.out.println("name: "+itemData.get("name"));
 				        System.out.println("Weight: "+itemData.get("weight")+" Kg");
