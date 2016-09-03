@@ -14,24 +14,39 @@ import org.json.simple.parser.JSONParser;
 
 public class JSON_ProgUsingParsing {
 	public static void main(String[] args) {
-		JSONParser parser = new JSONParser();
+		JSONParser parser = new JSONParser();//to read json files
+		double totalPrice;
 		try{
 			Object obj = parser.parse(new FileReader("JSON_File.json"));
-			JSONObject object = (JSONObject) obj;
+			JSONObject object = (JSONObject) obj;//json object created
+			
+			
 			 JSONArray data = (JSONArray) object.get("data");
 			 String[] str = {"rice","pulses","weats"};
+			 
 			 for(int i=0;i<data.size();i++){
 				 JSONObject itemObj = (JSONObject) data.get(i);
-				 
 				 JSONArray item = (JSONArray) itemObj.get(str[i]);
-				 System.out.println(str[i]+" Data:");
+				System.out.println(str[i]+" Data:");
+				totalPrice = 0;
 				 for (int y = 0; y < item.size(); y++) {
 				        JSONObject itemData = (JSONObject) item.get(y);
 				        System.out.println("name: "+itemData.get("name"));
-				        System.out.println("Weight: "+itemData.get("weight")+" Kg");
-				        System.out.println("price: "+itemData.get("price")+" /Kg");
+				      
+				        Object quantObject = itemData.get("weight");
+				        int quantity = Integer.parseInt((String)quantObject);
+				        System.out.println("Weight: "+quantity+" Kg");
+				        
+				        Object priceObject = itemData.get("price");
+				        double price = Double.parseDouble((String) priceObject);
+				        System.out.println("price: "+price+" Rs/Kg");
+				        
+				        double itemPrice = (quantity*price);
+				        totalPrice = totalPrice+itemPrice;
+				        System.out.println("price for "+itemData.get("name")+" is: "+itemPrice+" Rs");
 				        System.out.println();
 				    }
+				 System.out.println("Total Price for "+str[i]+" is: "+totalPrice+" Rs.");
 				 System.out.println("*********************");
 			 }
 
