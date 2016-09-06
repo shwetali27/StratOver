@@ -20,7 +20,6 @@ class RegularExpressionDemonstration{
 		File file = new File("Message.txt");
 		String message = u.readFile(file);
 		String firstName=null,phoneNumber;
-		boolean n=true,d=true;
 		System.out.print("Please Enter Your Full Name: ");
 		String fullName = u.inputString();
 		//Taking name and checking for the conditions
@@ -29,7 +28,6 @@ class RegularExpressionDemonstration{
 		if(checkName){
 			String name[] = fullName.split(" ");
 			firstName = name[0];
-			n = false;
 		}
 		else{
 			System.out.println("Your name or Format is Wrong\nPlease Enter in 'Abc Xyz' Format");
