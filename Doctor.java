@@ -2,12 +2,13 @@
 *@file_Name: Doctor.java
 *@Author: Shwetali
 *@Date: 06-09-2016
-*@purpose:  Creating Doctor class fo rclinic management.
+*@purpose:  Creating Doctor class for clinic management.
 */
 
 package com.bridgelabz.programs;
 import com.bridgelabz.util.Utility;
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Doctor{
 	Utility u = new Utility();
@@ -25,14 +26,14 @@ public class Doctor{
 	//displaying info for single doctor
 	public void printDoctor(Doctor d)
 	{
-		System.out.println("Doctor name : "+d.name);
-		System.out.println("Doctor id : "+d.id);
-		System.out.println("Doctor specialization : "+d.specialization);
-		System.out.println("Doctors availability : "+d.availability +"\n");
+		System.out.println("Name : "+d.name);
+		System.out.println("ID : "+d.id);
+		System.out.println("Specialization : "+d.specialization);
+		System.out.println("Availability : "+d.availability +"\n");
 	}
 
 	//Displaying List of Doctors
-	public void listOfDoctors(LinkedList<Doctor> doctors)
+	public void listOfDoctors(ArrayList<Doctor> doctors)
 	{
 		for(Doctor info : doctors)
 		{
@@ -43,9 +44,9 @@ public class Doctor{
 		}
 	}
 
-	public void popularDoctor(){}
 	
-	public void searchDoctor(LinkedList<Doctor> doctors){
+	//search method for Doctor
+	public void searchDoctor(ArrayList<Doctor> doctors){
 		System.out.println("1.Name\n2.ID\n3.Specilization\n4.Availability");
 		int choice = u.inputInteger();
 		switch(choice){
@@ -77,14 +78,13 @@ public class Doctor{
 				System.out.println("Entered Wrong Choice");
 			}
 		}//end of switch	
-	}
+	}//end of searchDoctor
 
 	//search by name
-	public void searchByName(LinkedList<Doctor> doctors,String name){
+	public void searchByName(ArrayList<Doctor> doctors,String name){
 		int count=0;
 		for(Doctor doctor : doctors){
 			if(name.equals(doctor.name)){
-				System.out.println("Search found");
 				this.printDoctor(doctor);
 				count++;
 			}
@@ -94,11 +94,10 @@ public class Doctor{
 	}
 
 	//searching doctor by id
-	public void searchById(LinkedList<Doctor> doctors,int id){
+	public void searchById(ArrayList<Doctor> doctors,int id){
 		int count=0;
 		for(Doctor doctor : doctors){
 			if(id == doctor.id){
-				System.out.println("Search found");
 				this.printDoctor(doctor);
 				count++;
 			}
@@ -109,7 +108,7 @@ public class Doctor{
 	}
 
 	//searching Doctor by specilization
-	public void searchBySpecilization(LinkedList<Doctor> doctors,String specialization){
+	public void searchBySpecilization(ArrayList<Doctor> doctors,String specialization){
 		int count=0;
 		for(Doctor doctor : doctors){
 			if(specialization.equals(doctor.specialization)){
@@ -122,16 +121,22 @@ public class Doctor{
 	}
 
 	//searching Doctor by availability
-	public void searchByAvailability(LinkedList<Doctor> doctors,String availability){
+	public void searchByAvailability(ArrayList<Doctor> doctors,String availability){
 		int count=0;
 		for(Doctor doctor : doctors){
 			if(availability.equals(doctor.availability)){
-				System.out.println("Search found");
 				this.printDoctor(doctor);
 				count++;
 			}
 		}
 		if(count==0)
 			System.out.println("Sorry Doctor for given availability not found");
+	}
+	//To search popular doctor
+	public void popularDoctor(ArrayList<Doctor> doctors){
+		Random r = new Random();
+		int num = r.nextInt(5);
+		System.out.println("Popular Doctor in Clinic:");
+		this.searchById(doctors,(num+1));
 	}
 }
