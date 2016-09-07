@@ -1,0 +1,7 @@
+{
+  "Patients":[
+      {"Name": "Mr. Patil","MobileNo": "9087645342","Age": "30"},
+      {"Name":"Ms. Sandhya","MobileNo":"8456985426","Age":"20"},
+      {"Name":"Mrs. Yadav","MobileNo":"7545865412","Age":"33"}
+  ]
+}
