@@ -118,7 +118,6 @@ public class HashTableCreation{
 	//show table
 	public void showTable(){
 		for(int i=0;i<tableSize;i++){
-			entry = table[i];
 
 			System.out.print("\ntable "+i+": ");
 			temp = table[i];
