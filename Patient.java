@@ -7,7 +7,7 @@
 
 package com.bridgelabz.programs;
 import com.bridgelabz.util.Utility;
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class Patient{
 	Utility u = new Utility();
@@ -33,7 +33,7 @@ public class Patient{
 	}
 
 	//Display list of patients
-	public void listOfPatients(LinkedList<Patient> patients){
+	public void listOfPatients(ArrayList<Patient> patients){
 		for(Patient info : patients){
 			System.out.println("Name : "+info.name);
 			System.out.println("ID : "+info.id);
@@ -43,7 +43,7 @@ public class Patient{
 	}
 
 	//search method for perticular data.
-	public void searchPatient(LinkedList<Patient> patients){
+	public void searchPatient(ArrayList<Patient> patients){
 		System.out.println("1.Name\n2.ID\n3.Mobile Number");
 		int choice = u.inputInteger();
 		switch(choice){
@@ -72,11 +72,10 @@ public class Patient{
 	}//end of searchPatient
 
 	//Searching for name
-	public void searchByName(LinkedList<Patient> patients,String name){
+	public void searchByName(ArrayList<Patient> patients,String name){
 		int count=0;
 		for(Patient patient : patients){
 			if(name.equals(patient.name)){
-				System.out.println("Search found");
 				this.printPatient(patient);
 				count++;
 			}
@@ -86,7 +85,7 @@ public class Patient{
 	}//end method
 
 	//searching for id
-	public void searchById(LinkedList<Patient> patients,int id){
+	public void searchById(ArrayList<Patient> patients,int id){
 		int count = 0;
 		for(Patient patient : patients){
 			if(id == patient.id){
@@ -99,7 +98,7 @@ public class Patient{
 	}
 
 	//searching for number
-	public void searchByNumber(LinkedList<Patient> patients, String number){
+	public void searchByNumber(ArrayList<Patient> patients, String number){
 		int count = 0;
 		for(Patient patient : patients){
 			if(number.equals(patient.mobileNo)){
