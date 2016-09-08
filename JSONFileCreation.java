@@ -17,20 +17,21 @@ public class JSONFileCreation {
 		//main json object created
 		JSONObject doctors = new JSONObject();
 		JSONArray doctArray = new JSONArray();//main outer array
-		
+		int id = 1;
+		String[] str = {"Dr. Joshi","Dr. Patel"};
 		//object of first array Element
 		JSONObject doctor1 = new JSONObject();
 		doctArray.add(doctor1);
-		doctor1.put("Name", "Dr. Joshi");
-		doctor1.put("ID", new Integer(1));
+		doctor1.put("Name", str[id-1]);
+		doctor1.put("ID", new Integer(id));
 		doctor1.put("Specialization", "Heart");
 		doctor1.put("Availability","Morning");
-		
+		id++;
 		//object of second array element
 		JSONObject doctor2 = new JSONObject();
 		doctArray.add(doctor2);
-		doctor2.put("Name", "Dr. Patel");
-		doctor2.put("ID", new Integer(2));
+		doctor2.put("Name", str[id-1]);
+		doctor2.put("ID", new Integer(id));
 		doctor2.put("Specialization", "Eyes");
 		doctor2.put("Availability","Morning");
 		
