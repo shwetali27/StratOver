@@ -17,6 +17,7 @@ public class BinaryTreeMethods{
 		insert(this.root,value);
 	}
 
+	//inserting the data at perticular position
 	public void insert(BinaryTreeNode current,int value){
 		node = new BinaryTreeNode(value);
 		if(root==null){
@@ -29,6 +30,8 @@ public class BinaryTreeMethods{
 				root1 = node;
 				System.out.println("Root1 is: "+root1.data);
 			}
+
+			//Checking for left position
 			else if(value<root1.getData()){
 				if(root1.getLeft()==null){
 					root1.setLeft(node);
@@ -41,6 +44,7 @@ public class BinaryTreeMethods{
 				}
 			}
 
+			//Checking for Right position
 			else{
 				if(root1.getRight()==null){
 					root1.setRight(node);

@@ -14,12 +14,13 @@ public class BinaryTreeSearch{
 	public static void main(String[] args){
 		Utility u = new Utility();
 		BinaryTreeMethods tree = new BinaryTreeMethods();
-		File file = new File("BinaryTreeData.txt");
+		File file = new File("BinaryTreeData.txt");//reading data from file
 		String string = u.readFile(file);
 		string = string.trim();
 		//System.out.println(string);
-
 		String[] str = string.split(" ");
+
+		//inserting the values inside tree nodes
 		for(int i=0;i<str.length;i++){
 			tree.insert(Integer.parseInt(str[i]));
 		}
